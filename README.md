@@ -1,31 +1,31 @@
 # DroneKit_MAVlink_SITL
 
 ## Preparation:
-```pip install future
 ```
-```pip install future
+pip install future
 ```
 DroneKit 
-```pip install dronekit
+```
+pip install dronekit
 ```
 https://github.com/mavlink/mavlink
-clone it as ZIP
-下載“MAVlink代碼生成工具包” -> 解壓縮 -> 進入MAVlink路徑 -> 輸入命令 python mavgenerate.py
+clone it as Download ZIP -> extract it -> go to MAVlink's directory -> ``` python mavgenerate.py ```
 
+cygwin : a unix interface that you can use on Windows.
+Open a cygwin terminal. This procedure initialize documents under Cygwin's \home. The path should be C:\cygwin\home\"user name"\ if you didn't change it during installation.
+```
+cd C:\cygwin\home\"user name"\ 
+```
+Open *.bashrc* with text editor like vi .
 
-cygwin
-打开Cygwin Termianl窗口。
-该步骤会在Cygwin的home目录下初始化文件。如果你使用了默认设置，那么目录应该为 C:\cygwin\home\你的用户名\
-
-前往C:\cygwin\home\你的用户名\ ，用文本编辑器打开.bashrc。
-
-在.bashrc末尾加上
+At the last line of *.bashrc*, add :
+```
 export PATH=$PATH:$HOME/ardupilot/Tools/autotest
+```
 
-
-MAVproxy
-SITL
-FlightGear
+MAVproxy : 
+SITL : 
+FlightGear : a 3-D viewer of your vehicle in SITL, it's good to see how a vehicle takes off and land rather than in 2-D dimension.
 
 ```
 cd ~/ardupilot/ArduCopter
@@ -44,6 +44,6 @@ mode rtl
 ```
 
 ## Reference:
-https://ardupilot.org/dev/docs/sitl-native-on-windows.html
-https://mavlink.io/en/getting_started/generate_libraries.html
-https://blog.csdn.net/ybhuangfugui/article/details/82348692
+* https://ardupilot.org/dev/docs/sitl-native-on-windows.html
+* https://mavlink.io/en/getting_started/generate_libraries.html
+* https://blog.csdn.net/ybhuangfugui/article/details/82348692
