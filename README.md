@@ -8,6 +8,17 @@ pip install future
 ```
 ***
 
+### SITL
+```
+pip install dronekit-sitl
+```
+***
+
+### MAVproxy
+A command line, powerful, light GCS(ground control station).
+* Download [MAVproxy on Windows](http://firmware.ardupilot.org/Tools/MAVProxy/MAVProxySetup-latest.exe) and install it.
+***
+
 ### DroneKit 
 ```
 git clone https://github.com/dronekit/dronekit-python.git
@@ -18,45 +29,24 @@ sudo python setup.py install
 ***
 
 ### MAVlink
-* Go to https://github.com/mavlink/mavlink
-* clone it as Download ZIP and extract it
-* go to MAVlink's directory
-* do ``` python mavgenerate.py ```
+1. Go to https://github.com/mavlink/mavlink
+2. clone it as Download ZIP and extract it. Go to MAVlink's directory.
+3. ```python mavgenerate.py```
 ***
 
 ### Cygwin
 It's a unix interface that you can use on Windows.
-
-* Open a cygwin terminal. 
-* This procedure initialize documents under Cygwin's \home. 
-* The path should be C:\cygwin\home\username\ if you didn't change it during installation.
-* ```cd C:\cygwin\home\username\```
-* Open *.bashrc* with text editor like vi. At the last line of *.bashrc*, add :
+1. Open a cygwin terminal. This procedure initialize documents under Cygwin's \home. The path should be C:\cygwin\home\username\ if you didn't change it during installation.
+2. ```cd C:\cygwin\home\username\```
+3. Open *.bashrc* with text editor like vi. At the last line of *.bashrc*, add :
 ```
 export PATH=$PATH:$HOME/ardupilot/Tools/autotest
 ```
 ***
 
-### MAVproxy
-A command line, powerful, light GCS(ground control station).
-* Download [MAVproxy on Windows](http://firmware.ardupilot.org/Tools/MAVProxy/MAVProxySetup-latest.exe) and install it.
-
-* Open cmd and go to ```C:\Users\User\AppData\Local\MAVProxy```
-* Execute ```mavproxy.py --master="com3"```
-* It'll connect to your drone over USB port. You can also connect over Network(IP address).
-* I use *com3* to connect with my drone.
-
-* By default, the logfile will be saved as mav.tlog and mav.tlog.raw in the same folder that MAVProxy was executed from.
-
-### SITL
-* ```pip install dronekit-sitl```
-***
-
-### FlightGear 3D View
-A 3-D viewer of your vehicle in SITL, it's good to see how a vehicle takes off and land rather than in 2-D dimension.
-
-***
 ## Start Simulation :
+Before we connect to UAV, we can try some simulations using SITL(Software in the Loop). 
+
 The following is the method to start your STIL simulation.
 
 ```
@@ -77,6 +67,18 @@ param set circle_radius 2000
 
 mode rtl
 ```
+***
+
+## Connect to UAV : 
+Let's connect to our UAV through MAVproxy.
+1. Open cmd and ```cd C:\Users\User\AppData\Local\MAVProxy```
+2. ```mavproxy.py --master="com3"```
+3. It'll connect to your drone over USB port. You can also connect over Network(IP address). I use *com3* to connect with my drone.
+4. By default, the logfile will be saved as mav.tlog and mav.tlog.raw in the same folder that MAVProxy was executed from.
+
+Before you enter commands, make sure you have already **taken the propellers off** for safety reasons.
+
+* You can try some easy command like ```arm throttle``` and ```takeoff 1``` or ```disarm```
 ***
 
 ## Reference:
